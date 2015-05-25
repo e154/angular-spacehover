@@ -1,0 +1,23 @@
+{
+  "name": "angular-spacehover",
+  "version": "0.1.0",
+  "authors": [
+    "(delta54 <support@e154.ru>)"
+  ],
+  "description": "andular spacehover directive",
+  "main": "angular-spacehover.js",
+  "keywords": [
+    "andular",
+    "spacehover",
+    "directive"
+  ],
+  "license": "MIT",
+  "homepage": "http://e154.ru/blog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
