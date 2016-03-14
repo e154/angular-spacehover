@@ -11,12 +11,14 @@
         .directive('spaceHover', function() {
 
             return {
-                restrict: 'C',
+                restrict: 'A',
+                scope: {
+                    spaceHover: "@"
+                },
                 link: function ($scope, $element, $attrs) {
 
                     var e = $element;
-
-                    e.find("img").css({
+                    e.find($scope.spaceHover).css({
                         display: 'inline-block',
                         'max-width': '100%'
                     });
@@ -34,7 +36,7 @@
                     });
 
                     e.find('a').append('<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;z-index:10"></div>');
-                    TweenLite.set(e.find("img"),{scale:0.98,rotationX:0,rotationY:0,x:0,y:0,transformPerspective:1200,ease:Power3.easeOut,overwrite:"all"});
+                    TweenLite.set(e.find($scope.spaceHover),{scale:0.98,rotationX:0,rotationY:0,x:0,y:0,transformPerspective:1200,ease:Power3.easeOut,overwrite:"all"});
 
                     e.on('mousemove.hoverdir, mouseleave.hoverdir',function(event) {
 
@@ -49,7 +51,7 @@
                                     diffv = (event.pageY - t) - mh;
 
 
-                                e.find("img").each(function () {
+                                e.find($scope.spaceHover).each(function () {
                                     var pc = jQuery(this),
                                         pl = 0.05,
                                         offsh = diffh * pl,
@@ -71,7 +73,7 @@
                                 break;
 
                             case "mouseleave":
-                                e.find("img").each(function () {
+                                e.find($scope.spaceHover).each(function () {
                                     var pc = jQuery(this);
                                     TweenLite.to(pc, 0.7, {
                                         scale: 1,
