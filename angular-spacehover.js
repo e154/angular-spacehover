@@ -14,7 +14,7 @@
                 restrict: 'C',
                 link: function ($scope, $element, $attrs) {
 
-                    var e = $($element);
+                    var e = $element;
 
                     e.find("img").css({
                         display: 'inline-block',

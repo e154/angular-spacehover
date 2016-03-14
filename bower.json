@@ -1,6 +1,6 @@
 {
   "name": "angular-spacehover",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "(delta54 <support@e154.ru>)"
   ],
@@ -19,5 +19,15 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+   "dependencies": {
+     "gsap": "^1.18.2"
+  },
+  "overrides": {
+    "gsap": {
+      "main": [
+        "src/minified/TweenLite.min.js"
+      ]
+    }
+  }
 }
